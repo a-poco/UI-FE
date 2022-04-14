@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import ListDevices from './components/ListDevices/ListDevices';
+import Navbar from './components/Navbar/Navbar';
+import { Product, Products } from './types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+const initialProducts: Products = {
+  version: '',
+  devices: []
 }
 
+const App = () => {
+  const [ products, setProducts] = React.useState(initialProducts);
+  const [error, setStateError] = React.useState({})
+
+
+  React.useEffect(() => {
+    fetch('https://static.ui.com/fingerprint/ui/public.json')
+    .then( response => response.json())
+    .then( data => setProducts(data))
+    .catch( err => setStateError(err))
+  }, [])
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <div className="products_data">
+        {products.devices.map((product: Product) => (
+        < ListDevices product={product} /> 
+        ))}
+      </div>
+    </BrowserRouter>
+  );
+}
 export default App;

@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #D6D9E2;
+}
+
+.navbar__logo-title {
+    display: flex;
+}
+
+.navbar__logo {
+    height: 48px;
+}
+
+.navbar__title {
+ margin-left: .8rem;
+} 
+
+.navbar__author {
+    margin-right: .8rem;
+}
