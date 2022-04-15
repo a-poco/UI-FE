@@ -1,6 +1,37 @@
-.list-devices {
-    list-style: none;
-    display: flex;
-    text-align: justify;
-    border-bottom-style: inset;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+.devices {
+    width: 100%;
+
 }
+.device-header{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 6fr 3fr 8fr;
+    margin: .6em 3em;
+    padding: 0em 6em;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+
+
+.list-devices {
+    margin: 1.6em 8em;
+    padding: 0em 8em;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 6fr 3fr 8fr;
+    border-bottom-style: inset;
+
+}
+
+/* .list-device__name {
+    width: 40%;
+}
+
+
+.list-device__line {
+    width: 50%;
+} */

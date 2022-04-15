@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.grid-devices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem;
+}
+
+
+.grid-devices__photo {
+    display: block;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin: 0 auto;
+}
+
+.grid-devices__figure {
+    margin: 0 auto;
+    background-color: #F6F6F8;
+    height: 180px;
+}
+
+.profileCard {
+    position: relative;
+    margin: 1em;
+    background-color:  #FFFFFF;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.grid-devices__description {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    height: 150px;
+    margin-left: 1em;
+
+}
+
+.grid-devices-description__name {
+    position: absolute;
+    bottom: 2em;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+
+.grid-devices-description__line {
+    position: absolute;
+    bottom: 1em;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin-top: .5em;
+    color: #838691;
+}

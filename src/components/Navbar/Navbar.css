@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .navbar {
     display: flex;
     justify-content: space-between;
+    text-align: center;
     background-color: #D6D9E2;
+    color: #838691;
+    font-family: 'Lato', sans-serif;
 }
 
 .navbar__logo-title {
@@ -14,8 +19,12 @@
 
 .navbar__title {
  margin-left: .8rem;
+ font-size: 28px;
+ margin-top: .2em;
 } 
 
 .navbar__author {
     margin-right: .8rem;
+    font-size: 24px;
+    margin-top: .3em;
 }
