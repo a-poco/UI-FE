@@ -13,9 +13,9 @@ a {
 
 .device-header{
     display: grid;
-    grid-gap: 2em;
-    grid-template-columns: 3fr 8fr 3fr 11fr;
-    padding-left: 7em;
+    grid-template-columns: 4fr 8fr 8fr 8fr;
+    padding-left: 6em;
+    padding-right: 6em;
     margin: 1.6em 11em;
     border-bottom-style: inset;
     border-color:#DEDFE1;
@@ -45,8 +45,7 @@ a {
     margin: 1em 8em;
     padding: 0em 8em;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 2fr 8fr 3fr 8fr;
+    grid-template-columns: 3fr 8fr 8fr 8fr;
     border-bottom-style: inset;
     border-color:#DEDFE1;
     font-family: 'Lato', sans-serif;
