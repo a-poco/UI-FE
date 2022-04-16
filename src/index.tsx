@@ -12,11 +12,16 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Navbar />
-    <Routes>
-    <Route path='/Device' element={<Device/>}/>
-    <Route path='/' element={<App />}/>
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/devices'>
+          <Route index element={<Device />} />
+          <Route path=':deviceId' element={<Device />} />
+        </Route>
+
+
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );

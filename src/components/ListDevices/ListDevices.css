@@ -1,37 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 
+a {
+    text-decoration: none;
+    color:#000000;
+    cursor: pointer;
+  }
+
 .devices {
     width: 100%;
-
 }
+
 .device-header{
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 6fr 3fr 8fr;
-    margin: .6em 3em;
-    padding: 0em 6em;
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    color: #000000;
+    grid-gap: 2em;
+    grid-template-columns: 3fr 8fr 3fr 11fr;
+    padding-left: 7em;
+    margin: 1.6em 11em;
+    border-bottom-style: inset;
+    border-color:#DEDFE1;
 }
 
+.device-header__devices {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #BDBDBD;
+}
+
+.device-header__line {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    color:#000000;
+    font-weight: bold;
+}
+
+.device-header__name {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    color:#000000;
+    font-weight: bold;
+}
 
 .list-devices {
-    margin: 1.6em 8em;
+    margin: 1em 8em;
     padding: 0em 8em;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 6fr 3fr 8fr;
+    grid-template-columns: 2fr 8fr 3fr 8fr;
     border-bottom-style: inset;
-
+    border-color:#DEDFE1;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
 }
 
-/* .list-device__name {
-    width: 40%;
+
+.list-devices:hover {
+    border-color:#838691;
 }
-
-
-.list-device__line {
-    width: 50%;
-} */

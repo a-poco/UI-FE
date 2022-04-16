@@ -11,11 +11,25 @@ export interface Product {
     line: {
       name: string,
       id: string,
-    }
+    },
     guids: Array<string>,
     product: {
       abbrev: string,
       name: string
+    },
+    shortnames: string,
+    unifi: {
+      adoptability: string
+      network: {
+        radios: {
+          na: {
+            gain: number,
+            maxPower: number,
+            maxSpeedMegabitsPerSecond: number,
+          }
+        }
+        numberOfPorts: number;
+      }
     }
-  
+
   }
