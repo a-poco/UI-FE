@@ -11,7 +11,7 @@ function Navbar() {
         </Link>
         <p className='navbar__title'>Devices</p>
       </div>
-      <p className='navbar__author' ><a href='https://github.com/a-poco' target="_blank" rel="noreferrer">Author/Cristina Salazar</a></p>
+      <p className='navbar__author' ><a href='https://github.com/a-poco' target="_blank" rel="noreferrer" className='navbar__author'>Author/Cristina Salazar</a></p>
     </header>
   )
 }

@@ -27,7 +27,7 @@ const Search = ({ listOfProduct, setProducts }: SearchProps) => {
     }
 
     return (
-        <form className='search-form' onSubmit={handleSearch}>
+        <form className='search-form' data-testId='search-form' onSubmit={handleSearch}>
             <input
                 className='search-form__search'
                 type="text"

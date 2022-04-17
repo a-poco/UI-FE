@@ -35,6 +35,7 @@
 
 .filter-bar-icons__grid{
   margin-right: .5em;
+  padding: .2em;
   border: none;
   background-color: #ffffff;
   font-size: 30px;
@@ -56,4 +57,13 @@
 
 .filter-bar-icons__filter:hover {
   color: black;
+}
+
+
+.css-1s2u09g-control{
+  width: 9em;
+}
+
+.css-6j8wv5-Input{
+  width: 6em;
 }

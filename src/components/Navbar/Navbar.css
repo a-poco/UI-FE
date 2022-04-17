@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,4 +28,5 @@
     margin-right: .8rem;
     font-size: 24px;
     margin-top: .3em;
+    color: #838691 !important;
 }
