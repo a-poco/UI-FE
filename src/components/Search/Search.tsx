@@ -2,14 +2,12 @@ import React from 'react'
 import './Search.css'
 import { Product } from '../../types';
 
-
 interface SearchProps {
     listOfProduct: Product[];
     setProducts: Function
 }
 
 const Search = ({ listOfProduct, setProducts }: SearchProps) => {
-
     const [searchInput, setSearchInput] = React.useState("");
 
     const handleSearch = (event: any) => {
@@ -27,7 +25,7 @@ const Search = ({ listOfProduct, setProducts }: SearchProps) => {
     }
 
     return (
-        <form className='search-form' data-testId='search-form' onSubmit={handleSearch}>
+        <form className='search-form' onSubmit={handleSearch}>
             <input
                 className='search-form__search'
                 type="text"

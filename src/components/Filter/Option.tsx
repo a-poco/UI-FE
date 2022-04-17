@@ -1,4 +1,3 @@
-import React from 'react'
 import { components } from "react-select";
 
 const Option = (props: any) => {
@@ -13,8 +12,6 @@ const Option = (props: any) => {
         <label>{props.label}</label>
       </components.Option>
     </div>
-
-
   );
 };
 

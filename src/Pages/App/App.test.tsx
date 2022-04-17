@@ -25,10 +25,3 @@ test('search input field should be rendered', async () => {
   const searchInput = screen.getByPlaceholderText(/Search/i);
   expect(searchInput).toBeInTheDocument()
 })
-
-test('search input field to change', async () => {
-  render(<App/>)
-  const searchInput = screen.getByPlaceholderText(/Search/i);
-  fireEvent.change(searchInput, {target : {value: "loco"}})
-  fireEvent.submit(screen.getByTestId("search-form"))
-})

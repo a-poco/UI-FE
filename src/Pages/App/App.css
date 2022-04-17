@@ -15,6 +15,7 @@
   font-size: 24px;
   border-bottom-style: inset;
   color: #838691;
+  max-height: 4em;
 }
 
 .filter-bar__icons{
@@ -61,9 +62,14 @@
 
 
 .css-1s2u09g-control{
-  width: 9em;
+  width: auto;
 }
 
 .css-6j8wv5-Input{
   width: 6em;
+}
+
+.css-b62m3t-container {
+  height: auto;
+  width: auto;
 }

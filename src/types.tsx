@@ -23,17 +23,17 @@ export interface Product {
     name: string
   },
   shortnames: string,
-  unifi: {
-    adoptability: string
-    network: {
-      radios: {
-        na: {
-          gain: number,
-          maxPower: number,
-          maxSpeedMegabitsPerSecond: number,
+  unifi?: {
+    adoptability?: string
+    network?: {
+      radios?: {
+        na?: {
+          gain?: number,
+          maxPower?: number,
+          maxSpeedMegabitsPerSecond?: number,
         }
       }
-      numberOfPorts: number;
+      numberOfPorts?: number;
     }
   }
 

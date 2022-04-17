@@ -3,14 +3,12 @@ import ReactSelect from 'react-select'
 import { Product, SelectedOption } from '../../types'
 import Option from './Option'
 
-
 interface FilterProps {
     listOfProduct: Product[];
     setProducts: Function
 }
 
 const Filter = ({ listOfProduct, setProducts }: FilterProps) => {
-
     const initialSelectedOption: SelectedOption[] = []
     const [selected, setSelected] = React.useState(initialSelectedOption)
 
@@ -19,13 +17,14 @@ const Filter = ({ listOfProduct, setProducts }: FilterProps) => {
             setProducts(listOfProduct)
             return
         }
-        const selectedValues = selected.map(input => input.value.toLocaleLowerCase())
-        const filter = listOfProduct.filter((device) => selectedValues.includes(device.line.name.toLocaleLowerCase()))
+        const selectedValues = selected.map(input => input.value)
+        const filter = listOfProduct.filter((device) => selectedValues.includes(device.line.name))
         setProducts(filter)
-    }, [selected]);
+    }, [listOfProduct, selected, setProducts]);
 
-
-    const options: SelectedOption[] = Array.from(new Set(listOfProduct.map((product: Product) => product.line.name))).map((name: string) => ({ value: name, label: name }))
+    const options: SelectedOption[] = Array.from(new Set(listOfProduct
+        .map((product: Product) => product.line.name)))
+        .map((name: string) => ({ value: name, label: name }))
 
     const handleChange = (event: any) => {
         setSelected(event)
@@ -38,9 +37,7 @@ const Filter = ({ listOfProduct, setProducts }: FilterProps) => {
                 isMulti
                 closeMenuOnSelect={false}
                 hideSelectedOptions={false}
-                components={{
-                    Option
-                }}
+                components={{ Option }}
                 onChange={handleChange}
                 value={selected}
                 placeholder={"Filter"}

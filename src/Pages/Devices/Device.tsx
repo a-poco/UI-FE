@@ -4,13 +4,15 @@ import { Product } from '../../types';
 import { IoChevronBackSharp } from "react-icons/io5";
 import './Device.css'
 
-export interface IDevicePageProps { }
-
-const Device: React.FunctionComponent<IDevicePageProps> = (props) => {
+const Device: React.FunctionComponent = () => {
   const { deviceId } = useParams();
   const location = useLocation();
 
   const product: Product = location.state as Product ?? undefined
+
+  const maxPower = product.unifi?.network?.radios?.na?.maxPower ?? "-"
+  const maxSpeedMegabitsPerSecond = product.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond ?? "-"
+  const noPorts = product.unifi?.network?.numberOfPorts ?? "-"
 
   return (
     <div>
@@ -20,7 +22,11 @@ const Device: React.FunctionComponent<IDevicePageProps> = (props) => {
       </header>
       <main className='device-card'>
         <figure>
-          {<img src={`https://static.ui.com/fingerprint/ui/icons/${product.icon.id}_${product.icon.resolutions.sort()[3][0]}x${product.icon.resolutions.sort()[3][1]}.png`} className="device-card__photo" alt="" />}
+          {<img
+            src={`https://static.ui.com/fingerprint/ui/icons/${product.icon.id}_${product.icon.resolutions.sort()[3][0]}x${product.icon.resolutions.sort()[3][1]}.png`}
+            className="device-card__photo"
+            alt=""
+          />}
         </figure>
         <section className='device-card__info'>
           <p className='device-card-info__title info'>Product line</p>
@@ -36,12 +42,13 @@ const Device: React.FunctionComponent<IDevicePageProps> = (props) => {
           <p className='device-card-info__title'>{product.line.id}</p>
           <p className='device-card-info__title'>{product.product.name}</p>
           <p className='device-card-info__title'>{product.shortnames}</p>
-          <p className='device-card-info__title'>{!product.unifi ? "-" : product.unifi.network.radios.na.maxPower} w</p>
-          <p className='device-card-info__title'>{!product.unifi ? "-" : product.unifi.network.radios.na.maxSpeedMegabitsPerSecond} Mbps </p>
-          <p className='device-card-info__title'>{!product.unifi ? "-" : product.unifi.network.numberOfPorts}</p>
+          <p className='device-card-info__title'>{maxPower} w</p>
+          <p className='device-card-info__title'>{maxSpeedMegabitsPerSecond} Mbps</p>
+          <p className='device-card-info__title'>{noPorts}</p>
         </section>
       </main>
     </div>
   )
 }
+
 export default Device

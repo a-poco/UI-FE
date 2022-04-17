@@ -39,3 +39,7 @@ color: #838691;
 .device-card-info__title.info {
     padding-right: 5em;
 }
+
+.device-card__photo {
+    margin-right: 5em;
+}

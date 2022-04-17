@@ -1,11 +1,11 @@
 import React from 'react';
+import './App.css';
 import ListDevices from '../../components/ListDevices/ListDevices';
 import { Product } from '../../types';
 import GridDevices from '../../components/GridDevices/GridDevices';
 import { BsListUl } from "react-icons/bs";
 import { IoGridOutline } from "react-icons/io5";
 import Search from "../../components/Search/Search";
-import './App.css';
 import Filter from '../../components/Filter/Filter';
 
 const initialProducts: Product[] = []
@@ -32,8 +32,8 @@ const App = () => {
   }, [])
 
   React.useEffect(() => {
-    const test = allProducts.map((item, index) => Object.assign(item, { key: index }))
-    setDisplayedProducts(test)
+    const displayProducts = allProducts.map((item, index) => Object.assign(item, { key: index }))
+    setDisplayedProducts(displayProducts)
   }, [allProducts])
 
   return (
