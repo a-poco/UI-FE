@@ -16,15 +16,17 @@ const ListDevices = ({ listOfProduct }: ListDevicesProps) => {
         <p className='device-header__name'>NAME</p>
       </header>
       {listOfProduct.map(product =>
-        <Link 
-          to={`/devices/${product.product.name}`}
-          state={product} >
-          <div className='list-devices'>
-            <p className='list-device__photo'>{<img src={`https://static.ui.com/fingerprint/ui/icons/${product.icon.id}_${product.icon.resolutions.sort()[4][0]}x${product.icon.resolutions.sort()[4][1]}.png`} className="product_list_icon" alt="" />}</p>
-            <p className='list-device__line'> {product.line.name}</p>
-            <p className='list-device__name'>{product.product.name}</p>
-          </div>
-        </Link>
+        <div key={product.key}>
+          <Link
+            to={`/devices/${product.product.name}`}
+            state={product} >
+            <div className='list-devices'>
+              <p className='list-device__photo'>{<img src={`https://static.ui.com/fingerprint/ui/icons/${product.icon.id}_${product.icon.resolutions.sort()[4][0]}x${product.icon.resolutions.sort()[4][1]}.png`} className="product_list_icon" alt="" />}</p>
+              <p className='list-device__line'> {product.line.name}</p>
+              <p className='list-device__name'>{product.product.name}</p>
+            </div>
+          </Link>
+        </div>
       )}
     </article>
   )

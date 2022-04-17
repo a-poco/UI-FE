@@ -1,0 +1,23 @@
+.search-form {
+    display: flex;
+    flex-direction: row;
+    width: 26%;
+}
+
+
+.search-form__search {
+    width: 240%;
+    padding: .5em;
+    border-style: none;
+    background-color: #F6F6F8;
+    font-size: 18px;
+    color: #838691;
+}
+
+.search-form__reset {
+    border-style: none;
+    background-color: #F6F6F8;
+    font-size: 18px;
+    padding-right: .5em;
+    color: #838691;
+}

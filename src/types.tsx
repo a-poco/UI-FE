@@ -8,6 +8,7 @@ export interface SelectedOption {
 }
 
 export interface Product {
+  key: string
   icon: {
     resolutions: Array<string>,
     id: string

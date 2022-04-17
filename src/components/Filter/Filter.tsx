@@ -1,19 +1,51 @@
 import React from 'react'
-import { components } from "react-select";
+import ReactSelect from 'react-select'
+import { Product, SelectedOption } from '../../types'
+import Option from './Option'
 
-const Option = (props: any) => {
+
+interface FilterProps {
+    listOfProduct: Product[];
+    setProducts: Function
+}
+
+const Filter = ({ listOfProduct, setProducts }: FilterProps) => {
+
+    const initialSelectedOption: SelectedOption[] = []
+    const [selected, setSelected] = React.useState(initialSelectedOption)
+
+    React.useEffect(() => {
+        if (selected.length === 0) {
+            setProducts(listOfProduct)
+            return
+        }
+        const selectedValues = selected.map(input => input.value.toLocaleLowerCase())
+        const filter = listOfProduct.filter((device) => selectedValues.includes(device.line.name.toLocaleLowerCase()))
+        setProducts(filter)
+    }, [selected]);
+
+
+    const options: SelectedOption[] = Array.from(new Set(listOfProduct.map((product: Product) => product.line.name))).map((name: string) => ({ value: name, label: name }))
+
+    const handleChange = (event: any) => {
+        setSelected(event)
+    }
+
     return (
-      <div>
-        <components.Option {...props}>
-          <input
-            type="checkbox"
-            checked={props.isSelected}
-            onChange={() => null}
-          />{" "}
-          <label>{props.label}</label>
-        </components.Option>
-      </div>
-    );
-  };
+        <div className='filter-bar-icons__filter'>
+            <ReactSelect
+                options={options}
+                isMulti
+                closeMenuOnSelect={false}
+                hideSelectedOptions={false}
+                components={{
+                    Option
+                }}
+                onChange={handleChange}
+                value={selected}
+                placeholder={"Filter"}
+            />
+        </div>)
+}
 
-  export default Option;
+export default Filter
