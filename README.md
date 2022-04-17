@@ -7,17 +7,17 @@ view  [demo](https://ubiquiti-dashboard.herokuapp.com/)
 ## Set up
 
 Clone repository and run:
-**`npm install`**
-**`npm start`**
+- **`npm install`**
+- **`npm start`**
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 To run test:
-**`npm test`**
+- **`npm test`**
 
 ## Built With
-React
-Typescript
+- React
+- Typescript
 
 
 
