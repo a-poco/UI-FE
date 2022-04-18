@@ -28,24 +28,26 @@ const Device: React.FunctionComponent = () => {
             alt=""
           />}
         </figure>
-        <section className='device-card__info'>
-          <p className='device-card-info__title info'>Product line</p>
-          <p className='device-card-info__title info'>ID</p>
-          <p className='device-card-info__title info'>Name</p>
-          <p className='device-card-info__title info'>Short name</p>
-          <p className='device-card-info__title info'>Max. power</p>
-          <p className='device-card-info__title info'>Speed</p>
-          <p className='device-card-info__title info'>Number of ports</p>
-        </section>
-        <section className='device-card__info'>
-          <p className='device-card-info__title'> {!deviceId ? "Nothing to see here" : (!location ? "Nothing to see here" : product.line.name)}</p>
-          <p className='device-card-info__title'>{product.line.id}</p>
-          <p className='device-card-info__title'>{product.product.name}</p>
-          <p className='device-card-info__title'>{product.shortnames}</p>
-          <p className='device-card-info__title'>{maxPower} w</p>
-          <p className='device-card-info__title'>{maxSpeedMegabitsPerSecond} Mbps</p>
-          <p className='device-card-info__title'>{noPorts}</p>
-        </section>
+        <article className='device-card-section'>
+          <section className='device-card__info'>
+            <p className='device-card-info__title info'>Product line</p>
+            <p className='device-card-info__title info'>ID</p>
+            <p className='device-card-info__title info'>Name</p>
+            <p className='device-card-info__title info'>Short name</p>
+            <p className='device-card-info__title info'>Max. power</p>
+            <p className='device-card-info__title info'>Speed</p>
+            <p className='device-card-info__title info'>Number of ports</p>
+          </section>
+          <section className='device-card__info'>
+            <p className='device-card-info__title'> {!deviceId ? "Nothing to see here" : (!location ? "Nothing to see here" : product.line.name)}</p>
+            <p className='device-card-info__title'>{product.line.id}</p>
+            <p className='device-card-info__title'>{product.product.name}</p>
+            <p className='device-card-info__title'>{product.shortnames}</p>
+            <p className='device-card-info__title'>{maxPower} w</p>
+            <p className='device-card-info__title'>{maxSpeedMegabitsPerSecond} Mbps</p>
+            <p className='device-card-info__title'>{noPorts}</p>
+          </section>
+        </article>
       </main>
     </div>
   )
